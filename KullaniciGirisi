@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class KullaniciGirisi {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Kullanıcı adınızı giriniz: ");
+		String userName = scanner.nextLine();
+		System.out.println("Şifrenizi giriniz: ");
+		String password = scanner.nextLine();
+		
+		if((userName.equals("patika")) && (password.equals("java123"))){
+			System.out.println("Giriş yapıldı!");
+		}
+		else if((userName.equals("patika")) && (!password.equals("java123"))) {
+			System.out.println("Kullanıcı adınız doğru fakat şifreniz yanlıştır.\n Şifrenizi sıfırlamak istiyor musunuz ?");
+            System.out.println("Cevabınız evet ise 1'e, hayır ise 2' ye tıklayın.");
+            String karar = scanner.nextLine();
+            if(karar.equals("1")) {
+            	System.out.println("Yeni şifrenizi giriniz.");
+            	String newPassword = scanner.nextLine();
+            	if(newPassword.equals("java123")) {
+            		System.out.println("Şifre oluşturulamadı!Lütfen başka şifre giriniz.");
+            		newPassword = scanner.nextLine();
+            		System.out.println("Yeni şifre oluşturuldu!");
+            	}else {
+            		System.out.println("Şifre oluşturuldu.");
+            	}
+            	
+            }else if(karar.equals("2")){
+            	System.out.println("Şifre sıfırlanmayacak.");
+            }else {
+            	System.out.println("Geçersiz işlem.");
+            }
+		}else if((!userName.equals("patika")) && (password.equals("java123"))) {
+			System.out.println("Kullanıcı adınız yanlış fakat şifreniz doğrudur.\n Kullanıcı adınızı sıfırlamak istiyor musunuz ?");
+			System.out.println("Cevabınız evet ise 1'e, hayır ise 2' ye tıklayın.");
+			String karar = scanner.nextLine();
+			if(karar.equals("1")) {
+            	System.out.println("Yeni kullanıcı adınızı giriniz.");
+            	String newUserName = scanner.nextLine();
+            	if(newUserName.equals("patika")) {
+            		System.out.println("Kullanıcı adı oluşturulamadı!Lütfen başka kullanıcı adı giriniz.");
+            		newUserName = scanner.nextLine();
+            		System.out.println("Yeni kullanıcı adı oluşturuldu!");
+            	}else {
+            		System.out.println("Kullanıcı adı oluşturuldu.");
+            	}
+            	
+            }else if(karar.equals("2")){
+            	System.out.println("Kullanıcı adı sıfırlanmayacak.");
+            }else {
+            	System.out.println("Geçersiz işlem.");
+            }
+		}
+		else {
+			System.out.println("Giriş yapılamadı.Kullanıcı adınız ve şifreniz yanlış.");
+		}
+
+		
+	}
+
+}
