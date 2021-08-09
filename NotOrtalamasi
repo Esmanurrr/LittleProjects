@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class NotOrtalamasi {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		int mat, turkce, kimya, fizik, muzik;
+		
+		System.out.println("Matematik notunu giriniz : ");
+	    mat = scanner.nextInt();
+		
+	    System.out.println("Türkçe notunu giriniz : ");
+	    turkce = scanner.nextInt();
+	 
+	    System.out.println("Fizik notunu giriniz : ");
+	    fizik = scanner.nextInt();
+	  
+	    System.out.println("Kimya notunu giriniz : ");
+	    kimya = scanner.nextInt();
+	   
+	    System.out.println("Müzik notunu giriniz : ");
+	    muzik = scanner.nextInt();
+		
+	    double ortalama = (mat + fizik + kimya + turkce + muzik) / 5;
+	    
+	    if(ortalama <= 55) {
+	    	System.out.println("Sınıfta kaldınız.");
+	    }else {
+	    	System.out.println("Sınıfı geçtiniz. ");
+	    }
+
+	}
+
+}
