@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class UcakBiletiHesaplama {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Kaç km  gideceksiniz ?");
+		int km = input.nextInt();
+		
+		if(km < 1) {
+			System.out.println("Hatalı veri girdiniz!");
+		}
+		
+		System.out.println("Kaç yaşındasınız ?");
+		int yas = input.nextInt();
+		
+		if(yas < 1) {
+			System.out.println("Hatalı veri girdiniz!");
+		}
+		
+		System.out.println("Yolculuk tipinizi seçin:\nTek yön ise 1'e, Çift yön ise 2'ye basın.");
+		int tip = input.nextInt();
+		
+		
+		double tutar = km * 0.10;
+		double yasIndirimi, toplamTutar, gidisDonus, sonTutar;
+		
+		
+			if(tip == 1) {
+				if(yas < 12) {
+					yasIndirimi = tutar * 0.5;
+					toplamTutar = tutar - yasIndirimi;
+					System.out.println("Toplam tutar : " + toplamTutar);
+				}else if(yas >= 12 && yas <= 24) {
+					yasIndirimi = tutar * 0.1;
+					toplamTutar = tutar - yasIndirimi;
+					System.out.println("Toplam tutar : " + toplamTutar);
+				}else if(yas >= 65) {
+					yasIndirimi = tutar * 0.3;
+					toplamTutar = tutar - yasIndirimi;
+					System.out.println("Toplam tutar : " + toplamTutar);
+				}
+			}else if(tip == 2) {
+				if(yas < 12) {
+					yasIndirimi = tutar * 0.5;
+					toplamTutar = tutar - yasIndirimi;
+					gidisDonus = toplamTutar * 0.2;
+					sonTutar = toplamTutar - gidisDonus;
+					System.out.println("Toplam tutar : " + sonTutar);
+				}else if(yas >= 12 && yas <= 24) {
+					yasIndirimi = tutar * 0.1;
+					toplamTutar = tutar - yasIndirimi;
+					gidisDonus = toplamTutar * 0.2;
+					sonTutar = toplamTutar - gidisDonus;
+					System.out.println("Toplam tutar : " + sonTutar);
+				}else if(yas >= 65) {
+					yasIndirimi = tutar * 0.3;
+					toplamTutar = tutar - yasIndirimi;
+					gidisDonus = toplamTutar * 0.2;
+					sonTutar = toplamTutar - gidisDonus;
+					System.out.println("Toplam tutar : " + sonTutar);
+				}
+				
+			}else {
+					System.out.println("Hatalı veri girdiniz !");
+			}
+		
+	}
+
+}
