@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Kombinasyon {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("n'in r'li kombinasyonu için sayıları giriniz(N sayısı r sayısından büyük olmalıdır.): ");
+		int n = input.nextInt();
+		int r = input.nextInt();
+		int faktoriyel1 = 1;
+		
+		for(int i = 1; i <= n; i++) {
+			faktoriyel1 *= i;
+		}
+		
+		int faktoriyel2 = 1;
+		for(int i = 1; i <= r; i++) {
+			faktoriyel2 *= i;
+		}
+		
+		int faktoriyel3 = 1;
+		for(int i = 1; i <= (n-r); i++) {
+			faktoriyel3 *= i;
+		}
+		
+		System.out.println("n ile r'nin kombinasyonu : " + (faktoriyel1/(faktoriyel2 * faktoriyel3)));
+
+	}
+
+}
