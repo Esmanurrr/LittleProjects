@@ -66,9 +66,7 @@ public class ArmstrongSayi {
 		 0 % 10 = 0;
 		 
 		 while( a != 0){
-		 a %= 0;
-		 basamakDeğeri++;
-		 
+		 basamakDegeri = a %= 10; 
 		 }
 		
 		int sub = 2, sup = 3;
